@@ -156,7 +156,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     }
   };
 
-  const cleanWhatsappDigits = config.whatsappNumber.replace(/[^\d]/g, '') || '15550192834';
+  const cleanWhatsappDigits = config.whatsappNumber.replace(/[^\d]/g, '') || '923088913584';
   const whatsappUrl = `https://wa.me/${cleanWhatsappDigits}?text=${encodeURIComponent(
     `Hello NovaAI! I'm interested in ${service} for my ${businessType}.`
   )}`;

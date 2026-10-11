@@ -15,7 +15,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
 }) => {
   const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | null>(null);
 
-  const cleanWhatsappDigits = config.whatsappNumber.replace(/[^\d]/g, '') || '15550192834';
+  const cleanWhatsappDigits = config.whatsappNumber.replace(/[^\d]/g, '') || '923088913584';
 
   return (
     <footer className="bg-[#05060E] pt-16 pb-12 text-slate-400 text-xs">
