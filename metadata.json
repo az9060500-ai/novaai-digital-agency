@@ -1,0 +1,6 @@
+{
+  "name": "NovaAI — Build. Automate. Grow.",
+  "description": "Futuristic 3D digital agency platform for custom business websites, restaurant websites, Shopify e-commerce stores, and WhatsApp chatbot automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
