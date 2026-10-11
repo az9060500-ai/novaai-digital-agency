@@ -35,7 +35,7 @@ interface FineDineDish {
   price: number;
   description: string;
   dietary: string;
-  image?: string;
+  image: string;
 }
 
 const FINEDINE_MENU: FineDineDish[] = [
@@ -63,7 +63,8 @@ const FINEDINE_MENU: FineDineDish[] = [
     category: 'Starters',
     price: 26,
     description: 'Foraged chanterelles, roasted chestnut crema, 24-month Reggiano foam, herb brioche crisp.',
-    dietary: 'Vegetarian'
+    dietary: 'Vegetarian',
+    image: GENERATED_IMAGES.finedineScallops
   },
   {
     id: 'fd-4',
@@ -71,7 +72,8 @@ const FINEDINE_MENU: FineDineDish[] = [
     category: 'Seafood',
     price: 58,
     description: '72-hour Den miso marinade, charred baby bok choy, yuzu dashi broth, pickled ginger shoots.',
-    dietary: 'Signature Course'
+    dietary: 'Signature Course',
+    image: GENERATED_IMAGES.finedineBlackCod
   },
   {
     id: 'fd-5',
@@ -79,7 +81,8 @@ const FINEDINE_MENU: FineDineDish[] = [
     category: 'Wagyu & Mains',
     price: 68,
     description: 'Smoked aubergine purée, heirloom baby carrots, rosemary jus.',
-    dietary: 'Halal Certified · Gluten-Free'
+    dietary: 'Halal Certified · Gluten-Free',
+    image: GENERATED_IMAGES.finedineWagyu
   },
   {
     id: 'fd-6',
@@ -87,7 +90,8 @@ const FINEDINE_MENU: FineDineDish[] = [
     category: 'Desserts',
     price: 24,
     description: '70% Guanaja chocolate mousse, espresso hazelnut praline center, warm salted caramel pour.',
-    dietary: 'Vegetarian · Contains Nuts'
+    dietary: 'Vegetarian · Contains Nuts',
+    image: GENERATED_IMAGES.finedineChocolate
   }
 ];
 
@@ -97,6 +101,7 @@ interface CafeItem {
   category: 'Specialty Coffee' | 'Artisanal Bakery' | 'All-Day Brunch';
   price: string;
   notes: string;
+  image: string;
 }
 
 const URBAN_CAFE_MENU: CafeItem[] = [
@@ -105,42 +110,48 @@ const URBAN_CAFE_MENU: CafeItem[] = [
     name: 'Single-Origin Ethiopian Pour-Over (V60)',
     category: 'Specialty Coffee',
     price: '$6.50',
-    notes: 'Floral jasmine aroma, bergamot & white peach finish · Light roast'
+    notes: 'Floral jasmine aroma, bergamot & white peach finish · Light roast',
+    image: GENERATED_IMAGES.urbanCafeLatte
   },
   {
     id: 'uc-2',
     name: 'Oat Milk Velvet Cortado',
     category: 'Specialty Coffee',
     price: '$5.25',
-    notes: 'Double ristretto espresso with micro-steamed barista oat milk'
+    notes: 'Double ristretto espresso with micro-steamed barista oat milk',
+    image: GENERATED_IMAGES.urbanCafeLatte
   },
   {
     id: 'uc-3',
     name: 'Ceremonial Uji Matcha Latte',
     category: 'Specialty Coffee',
     price: '$6.75',
-    notes: 'Stone-ground first-harvest Kyoto matcha whisked to order'
+    notes: 'Stone-ground first-harvest Kyoto matcha whisked to order',
+    image: GENERATED_IMAGES.urbanCafeLatte
   },
   {
     id: 'uc-4',
     name: 'Roasted Pistachio & Crème Laminated Croissant',
     category: 'Artisanal Bakery',
     price: '$7.50',
-    notes: '72-hour fermented French butter pastry filled with Sicilian pistachio crema'
+    notes: '72-hour fermented French butter pastry filled with Sicilian pistachio crema',
+    image: GENERATED_IMAGES.urbanCafeLatte
   },
   {
     id: 'uc-5',
-    name: 'Cardamom & Orange Blossom Morning Bun',
+    name: 'Valrhona Dark Chocolate Brioche Tart',
     category: 'Artisanal Bakery',
-    price: '$5.75',
-    notes: 'Freshly ground green cardamom, organic citrus zest, flaky brioche dough'
+    price: '$6.25',
+    notes: 'Warm dark chocolate ganache, toasted hazelnut praline, flaky pastry crust',
+    image: GENERATED_IMAGES.finedineChocolate
   },
   {
     id: 'uc-6',
-    name: 'Truffle Scrambled Eggs on Country Sourdough',
+    name: 'Seared Scallop & Herb Sourdough Brunch Plate',
     category: 'All-Day Brunch',
-    price: '$16.50',
-    notes: 'Pasture-raised eggs, whipped ricotta, chives, grilled levain toast'
+    price: '$18.50',
+    notes: 'Pasture-raised poached eggs, saffron citrus butter, grilled country levain',
+    image: GENERATED_IMAGES.finedineScallops
   }
 ];
 
@@ -154,7 +165,7 @@ interface GlowSkinProduct {
   actives: string;
   skinType: string;
   description: string;
-  image?: string;
+  image: string;
 }
 
 const GLOWSKIN_PRODUCTS: GlowSkinProduct[] = [
@@ -203,7 +214,8 @@ const GLOWSKIN_PRODUCTS: GlowSkinProduct[] = [
     actives: '10% Niacinamide · Zinc PCA · Centella Asiatica',
     skinType: 'Combination & Blemish-Prone Skin',
     description:
-      'Balances excess sebum production while visibly smoothing texture and calming environmental redness.'
+      'Balances excess sebum production while visibly smoothing texture and calming environmental redness.',
+    image: GENERATED_IMAGES.glowskinNiacinamide
   },
   {
     id: 'gs-4',
@@ -218,7 +230,8 @@ const GLOWSKIN_PRODUCTS: GlowSkinProduct[] = [
     actives: 'Moroccan Blue Tansy · Oat Amino Acids · White Willow Bark',
     skinType: 'Normal, Sensitive & Combination Skin',
     description:
-      'Dissolves daily SPF and impurities without disrupting the delicate acid mantle.'
+      'Dissolves daily SPF and impurities without disrupting the delicate acid mantle.',
+    image: GENERATED_IMAGES.glowskinCleanser
   }
 ];
 
@@ -287,9 +300,8 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
   const [botInput, setBotInput] = useState('');
   const [leadCaptureOpen, setLeadCaptureOpen] = useState(false);
   const [botLead, setBotLead] = useState({ name: '', phone: '', inquiry: '' });
-  const [botLeadSaved, setBotLeadSaved] = useState<string | null>(null);
+  const [, setBotLeadSaved] = useState<string | null>(null);
 
-  // --- FINEDINE HANDLERS ---
   const updateFdQty = (id: string, delta: number) => {
     setFdReceipt(null);
     setFdCart((prev) => {
@@ -338,7 +350,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
     }
   };
 
-  // --- URBAN CAFE HANDLERS ---
   const handleUrbanCafeReserve = async (e: React.FormEvent) => {
     e.preventDefault();
     setUcResError(null);
@@ -364,7 +375,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
     }
   };
 
-  // --- GLOWSKIN HANDLERS ---
   const handleAddToGlowSkinBag = (product: GlowSkinProduct, sizeIdx: number) => {
     const sizeObj = product.sizes[sizeIdx] || product.sizes[0];
     const unitPrice = Math.round(product.basePrice * sizeObj.multiplier);
@@ -418,7 +428,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
     }
   };
 
-  // --- WHATSAPP ASSISTANT HANDLERS ---
   const switchBotPersona = (persona: 'restaurant' | 'ecommerce' | 'agency') => {
     setBotPersona(persona);
     setLeadCaptureOpen(false);
@@ -538,12 +547,22 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
     }
   };
 
-  const DEMO_TABS: { id: DemoId; name: string; category: string; serviceName: string; icon: React.ReactNode }[] = [
+  const DEMO_TABS: {
+    id: DemoId;
+    name: string;
+    category: string;
+    serviceName: string;
+    thumbnail: string;
+    summary: string;
+    icon: React.ReactNode;
+  }[] = [
     {
       id: 'finedine',
       name: 'FineDine Restaurant',
       category: 'Restaurant Website Sample',
       serviceName: 'Restaurant Website Design',
+      thumbnail: GENERATED_IMAGES.finedineWagyu,
+      summary: 'Interactive tasting menu, course filters, order tray & WhatsApp pre-order builder.',
       icon: <Utensils className="w-4 h-4" />
     },
     {
@@ -551,6 +570,8 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
       name: 'Urban Café',
       category: 'Café & Reservation Sample',
       serviceName: 'Business Website Development',
+      thumbnail: GENERATED_IMAGES.urbanCafeLatte,
+      summary: 'Specialty coffee menu, visual gallery, location map & table reservation inquiry.',
       icon: <Coffee className="w-4 h-4" />
     },
     {
@@ -558,6 +579,8 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
       name: 'GlowSkin Store',
       category: 'Shopify E-Commerce Sample',
       serviceName: 'Shopify Store Development',
+      thumbnail: GENERATED_IMAGES.glowskinSerum,
+      summary: 'Skincare product catalog, variant selectors, shopping bag & simulated checkout.',
       icon: <ShoppingBag className="w-4 h-4" />
     },
     {
@@ -565,6 +588,8 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
       name: 'Smart WhatsApp Assistant',
       category: 'Chatbot Automation Sample',
       serviceName: 'WhatsApp Chatbot Automation',
+      thumbnail: GENERATED_IMAGES.glowskinCleanser,
+      summary: '24/7 automated business FAQ responses, menu lookup & lead capture flow.',
       icon: <MessageSquare className="w-4 h-4" />
     }
   ];
@@ -591,7 +616,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
             </p>
           </div>
 
-          {/* Interactive Filter Controls (Buttons Allowed by Zero-Pill Rule) */}
           <div
             className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-xl bg-[#0D1025] border border-white/10 self-start"
             role="tablist"
@@ -620,6 +644,62 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
           </div>
         </div>
 
+        {/* 4-Card Project Thumbnail Overview Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          {DEMO_TABS.map((project) => {
+            const isActive = activeDemo === project.id;
+            return (
+              <div
+                key={project.id}
+                onClick={() => onSelectDemo(project.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && onSelectDemo(project.id)}
+                className={`group rounded-2xl overflow-hidden border transition-all duration-200 cursor-pointer flex flex-col justify-between ${
+                  isActive
+                    ? 'bg-[#15193B] border-violet-400 shadow-xl shadow-violet-950/40 -translate-y-0.5'
+                    : 'bg-[#0D1025]/80 border-white/10 hover:border-violet-400/50'
+                }`}
+              >
+                <div>
+                  <div className="h-36 w-full overflow-hidden relative bg-[#080A18] border-b border-white/10">
+                    <ResilientImage
+                      src={project.thumbnail}
+                      alt={`${project.name} sample demo thumbnail`}
+                      fallbackCategory="agency"
+                      fallbackTitle={project.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080A18] via-transparent to-transparent" />
+                    <span className="absolute bottom-2.5 left-3 text-[11px] font-mono-tabular text-violet-200 font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <div className="p-4">
+                    <h3 className="text-base font-display font-bold text-white mb-1 flex items-center justify-between">
+                      <span>{project.name}</span>
+                      {isActive && (
+                        <span className="text-[11px] font-mono-tabular text-emerald-300">
+                          Active
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {project.summary}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-4 py-2.5 border-t border-white/10 bg-white/[0.02] flex items-center justify-between text-xs font-semibold text-violet-300 group-hover:text-white">
+                  <span>{isActive ? 'Currently Viewing Below' : 'Launch Interactive Demo'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         {/* Interactive Browser Sandbox Frame */}
         <div
           className={`${
@@ -628,7 +708,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
               : 'relative rounded-2xl bg-[#0B0E22] border border-white/15 shadow-2xl shadow-black/70 overflow-hidden'
           }`}
         >
-          {/* Browser Top Bar */}
           <div className="px-4 sm:px-6 py-3.5 bg-[#070915] border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5">
@@ -674,14 +753,10 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
             </div>
           </div>
 
-          {/* Demo Viewport Content Area */}
           <div className={`${isFullscreen ? 'flex-1 overflow-y-auto' : 'max-h-[780px] overflow-y-auto'}`}>
-            {/* =========================================================
-                DEMO 1: FINEDINE — ELEGANT RESTAURANT WEBSITE DEMO
-               ========================================================= */}
+            {/* DEMO 1: FINEDINE */}
             {activeDemo === 'finedine' && (
               <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-b from-[#0E101F] to-[#080914]">
-                {/* FineDine Demo Header & Hero Banner */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-10 pb-8 border-b border-white/10">
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
@@ -696,7 +771,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </p>
                     </div>
 
-                    {/* Restaurant Contact & Hours Metadata Bar */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs text-slate-300">
                       <div className="flex items-start gap-2">
                         <MapPin className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
@@ -737,9 +811,7 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                   </div>
                 </div>
 
-                {/* FineDine Menu + Interactive Order Tray */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                  {/* Left 8 Cols: Filterable Menu */}
                   <div className="lg:col-span-8">
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                       <h4 className="text-lg font-display font-bold text-white">
@@ -772,16 +844,14 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                             className="rounded-xl bg-[#12162E] border border-white/10 overflow-hidden flex flex-col justify-between"
                           >
                             <div>
-                              {dish.image && (
-                                <div className="h-36 w-full overflow-hidden border-b border-white/10">
-                                  <ResilientImage
-                                    src={dish.image}
-                                    alt={dish.name}
-                                    fallbackCategory="restaurant"
-                                    className="w-full h-full object-cover"
-                                  />
-                                </div>
-                              )}
+                              <div className="h-36 w-full overflow-hidden border-b border-white/10 bg-[#080A18]">
+                                <ResilientImage
+                                  src={dish.image}
+                                  alt={dish.name}
+                                  fallbackCategory="restaurant"
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
                               <div className="p-4">
                                 <div className="flex items-start justify-between gap-2 mb-1.5">
                                   <h5 className="text-sm font-semibold text-white leading-snug">
@@ -843,7 +913,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                     </div>
                   </div>
 
-                  {/* Right 4 Cols: Interactive Order & WhatsApp Pre-Order Builder */}
                   <div className="lg:col-span-4">
                     <div className="rounded-xl bg-[#12162E] border border-white/15 p-5 sticky top-4">
                       <h4 className="text-base font-display font-bold text-white mb-1">
@@ -853,7 +922,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                         Test how diners assemble an order and send it via WhatsApp or direct checkout.
                       </p>
 
-                      {/* Order Mode Selector */}
                       <div className="grid grid-cols-2 gap-1.5 p-1 rounded-lg bg-[#090B18] border border-white/10 mb-4">
                         {(['Dine-In Pre-Order', 'Priority Takeaway'] as const).map((mode) => (
                           <button
@@ -962,9 +1030,7 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
               </div>
             )}
 
-            {/* =========================================================
-                DEMO 2: URBAN CAFÉ — MODERN CAFÉ WEBSITE DEMO
-               ========================================================= */}
+            {/* DEMO 2: URBAN CAFÉ */}
             {activeDemo === 'urbancafe' && (
               <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-b from-[#131424] to-[#0A0C18]">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-white/10">
@@ -977,7 +1043,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                     </h3>
                   </div>
 
-                  {/* Café Internal Navigation Tabs */}
                   <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-[#090B16] border border-white/10">
                     {(
                       [
@@ -1009,20 +1074,32 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       {URBAN_CAFE_MENU.map((item) => (
                         <div
                           key={item.id}
-                          className="p-4 rounded-xl bg-[#141830] border border-white/10 flex flex-col justify-between"
+                          className="rounded-xl bg-[#141830] border border-white/10 overflow-hidden flex flex-col justify-between"
                         >
                           <div>
-                            <div className="flex items-start justify-between gap-2 mb-1">
-                              <h4 className="text-sm font-semibold text-white">{item.name}</h4>
-                              <span className="text-xs font-mono-tabular font-semibold text-amber-300 shrink-0">
-                                {item.price}
-                              </span>
+                            <div className="h-32 w-full overflow-hidden border-b border-white/10 bg-[#080A18]">
+                              <ResilientImage
+                                src={item.image}
+                                alt={item.name}
+                                fallbackCategory="cafe"
+                                className="w-full h-full object-cover"
+                              />
                             </div>
-                            <p className="text-xs text-slate-300 leading-relaxed mb-3">
-                              {item.notes}
-                            </p>
+                            <div className="p-4">
+                              <div className="flex items-start justify-between gap-2 mb-1">
+                                <h4 className="text-sm font-semibold text-white">{item.name}</h4>
+                                <span className="text-xs font-mono-tabular font-semibold text-amber-300 shrink-0">
+                                  {item.price}
+                                </span>
+                              </div>
+                              <p className="text-xs text-slate-300 leading-relaxed mb-2">
+                                {item.notes}
+                              </p>
+                            </div>
                           </div>
-                          <span className="text-[11px] text-violet-300">{item.category}</span>
+                          <div className="px-4 pb-3">
+                            <span className="text-[11px] text-violet-300">{item.category}</span>
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -1091,23 +1168,21 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </div>
                     </div>
 
-                    <div className="rounded-xl border border-white/10 bg-gradient-to-br from-[#1B1F3B] to-[#0E1124] p-6 flex flex-col justify-between">
-                      <div>
-                        <p className="text-xs text-violet-300 font-medium mb-2">Private Coffee Tastings</p>
-                        <h4 className="text-lg font-display font-bold text-white mb-2">
-                          Host Cupping Sessions & Creative Meetups
-                        </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed">
-                          The courtyard room accommodates up to 18 guests with dedicated barista service and high-speed fiber Wi-Fi.
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-[#141830]">
+                      <div className="h-52">
+                        <ResilientImage
+                          src={GENERATED_IMAGES.finedineChocolate}
+                          alt="Artisanal chocolate pastry and afternoon tasting"
+                          fallbackCategory="cafe"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h4 className="text-sm font-semibold text-white">Afternoon Pastry & Tasting Flights</h4>
+                        <p className="text-xs text-slate-400 mt-1">
+                          Single-origin espresso flights paired with house-made patisserie.
                         </p>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setUcTab('reserve')}
-                        className="mt-4 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors self-start cursor-pointer"
-                      >
-                        Inquire About Courtyard Seating
-                      </button>
                     </div>
                   </div>
                 )}
@@ -1137,7 +1212,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </p>
                     </div>
 
-                    {/* Stylized Architectural Location Map Card */}
                     <div className="lg:col-span-6 rounded-xl bg-[#0D1022] border border-white/10 p-6 flex flex-col justify-between relative overflow-hidden">
                       <div className="relative z-10">
                         <span className="text-xs font-mono-tabular text-violet-300 block mb-1">
@@ -1287,12 +1361,9 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
               </div>
             )}
 
-            {/* =========================================================
-                DEMO 3: GLOWSKIN STORE — SKINCARE SHOPIFY DEMO
-               ========================================================= */}
+            {/* DEMO 3: GLOWSKIN STORE */}
             {activeDemo === 'glowskin' && (
               <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-b from-[#111326] to-[#080A16]">
-                {/* Shopify Demo Notice Banner */}
                 <div className="mb-6 px-4 py-2.5 rounded-xl bg-violet-950/40 border border-violet-400/25 flex flex-wrap items-center justify-between gap-2 text-xs text-violet-200">
                   <div className="flex items-center gap-2">
                     <Info className="w-4 h-4 text-violet-400 shrink-0" />
@@ -1302,7 +1373,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                   </div>
                 </div>
 
-                {/* Storefront Top Bar & Category Filters */}
                 <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-white/10">
                   <div>
                     <p className="text-xs text-violet-300 font-medium mb-1">
@@ -1332,7 +1402,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                  {/* Left 4 Cols: Product Catalog Grid */}
                   <div className="lg:col-span-5 space-y-4">
                     <h4 className="text-xs font-semibold text-slate-300">
                       Select a Product to Inspect Details & Variants
@@ -1365,7 +1434,7 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                           >
                             <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-[#090B16] border border-white/10">
                               <ResilientImage
-                                src={product.image || ''}
+                                src={product.image}
                                 alt={product.name}
                                 fallbackCategory="skincare"
                                 fallbackTitle={product.category}
@@ -1395,13 +1464,12 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                     </div>
                   </div>
 
-                  {/* Middle 4 Cols: Contiguous Product Detail Purchase Module (PDP) */}
                   <div className="lg:col-span-4">
                     <div className="rounded-xl bg-[#141833] border border-white/15 p-5 h-full flex flex-col justify-between">
                       <div>
                         <div className="h-48 w-full rounded-lg overflow-hidden mb-4 bg-[#090B16] border border-white/10">
                           <ResilientImage
-                            src={gsSelectedProduct.image || ''}
+                            src={gsSelectedProduct.image}
                             alt={gsSelectedProduct.name}
                             fallbackCategory="skincare"
                             fallbackTitle={gsSelectedProduct.name}
@@ -1426,7 +1494,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                           {gsSelectedProduct.description}
                         </p>
 
-                        {/* Variant Size Selector */}
                         <div className="mb-4">
                           <label className="block text-xs font-semibold text-slate-200 mb-2">
                             Select Size Variant:
@@ -1477,7 +1544,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                     </div>
                   </div>
 
-                  {/* Right 3 Cols: Shopping Bag & Demo Checkout */}
                   <div className="lg:col-span-3">
                     <div className="rounded-xl bg-[#12152B] border border-white/15 p-5">
                       <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
@@ -1592,13 +1658,10 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
               </div>
             )}
 
-            {/* =========================================================
-                DEMO 4: SMART WHATSAPP ASSISTANT — WORKING CHATBOT DEMO
-               ========================================================= */}
+            {/* DEMO 4: SMART WHATSAPP ASSISTANT */}
             {activeDemo === 'whatsapp-bot' && (
               <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-b from-[#0E1528] to-[#080A16]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  {/* Left 5 Cols: Chatbot Architecture & Business Persona Selector */}
                   <div className="lg:col-span-5 space-y-6">
                     <div>
                       <p className="text-xs text-emerald-300 font-medium mb-1">
@@ -1612,7 +1675,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </p>
                     </div>
 
-                    {/* Persona Switcher */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-200 mb-2">
                         1. Choose a Sample Business Bot Persona:
@@ -1654,7 +1716,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </div>
                     </div>
 
-                    {/* Clear Distinction Between Simulated Demo and Live WhatsApp API */}
                     <div className="p-4 rounded-xl bg-[#10142B] border border-white/10 text-xs text-slate-300 space-y-2">
                       <p className="font-semibold text-white flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-violet-400" />
@@ -1669,9 +1730,7 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                     </div>
                   </div>
 
-                  {/* Right 7 Cols: Interactive Chat Thread Window */}
                   <div className="lg:col-span-7 rounded-2xl bg-[#0B0F20] border border-white/15 overflow-hidden flex flex-col h-[520px]">
-                    {/* Chat Header */}
                     <div className="px-5 py-3.5 bg-[#121833] border-b border-white/10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300">
@@ -1698,7 +1757,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       </button>
                     </div>
 
-                    {/* Chat Messages Scroll Container */}
                     <div className="flex-1 p-5 overflow-y-auto space-y-3.5">
                       {botMessages.map((msg) => (
                         <div
@@ -1774,7 +1832,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       )}
                     </div>
 
-                    {/* Quick-Reply Predefined FAQ Prompts */}
                     <div className="px-4 py-2.5 bg-[#0E1329] border-t border-white/10 flex items-center gap-2 overflow-x-auto">
                       {botPersona === 'restaurant' && (
                         <>
@@ -1841,7 +1898,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
                       )}
                     </div>
 
-                    {/* Free-Text Input Bar */}
                     <form
                       onSubmit={handleBotSend}
                       className="p-3 bg-[#090C1A] border-t border-white/10 flex items-center gap-2"
@@ -1867,7 +1923,6 @@ export const PortfolioDemos: React.FC<PortfolioDemosProps> = ({
             )}
           </div>
 
-          {/* Bottom Bar Inside Demo Sandbox */}
           <div className="px-6 py-3.5 bg-[#070915] border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
             <span className="text-slate-400">
               All sample projects above are interactive demonstrations built by NovaAI.

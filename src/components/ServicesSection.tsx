@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Play } from 'lucide-react';
 import { DemoId, ServiceItem } from '../types';
+import { GENERATED_IMAGES, ResilientImage } from './ResilientImage';
 
-export const SERVICES_DATA: ServiceItem[] = [
+export const SERVICES_DATA: (ServiceItem & { previewImage: string; previewAlt: string })[] = [
   {
     id: 'business-website',
     index: '01.',
@@ -19,7 +20,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     demoId: 'urbancafe',
     demoLabel: 'View Urban Café Demo',
-    iconType: 'website-cube'
+    iconType: 'website-cube',
+    previewImage: GENERATED_IMAGES.urbanCafeLatte,
+    previewAlt: 'Modern specialty café and business website showcase'
   },
   {
     id: 'restaurant-website',
@@ -37,7 +40,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     demoId: 'finedine',
     demoLabel: 'View FineDine Demo',
-    iconType: 'restaurant-cloche'
+    iconType: 'restaurant-cloche',
+    previewImage: GENERATED_IMAGES.finedineWagyu,
+    previewAlt: 'FineDine restaurant digital menu and Wagyu culinary showcase'
   },
   {
     id: 'shopify-store',
@@ -55,7 +60,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     demoId: 'glowskin',
     demoLabel: 'View GlowSkin Store Demo',
-    iconType: 'shopify-gem'
+    iconType: 'shopify-gem',
+    previewImage: GENERATED_IMAGES.glowskinSerum,
+    previewAlt: 'GlowSkin luxury skincare Shopify storefront product showcase'
   },
   {
     id: 'whatsapp-chatbot',
@@ -73,7 +80,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     demoId: 'whatsapp-bot',
     demoLabel: 'View Chatbot Demo',
-    iconType: 'whatsapp-node'
+    iconType: 'whatsapp-node',
+    previewImage: GENERATED_IMAGES.glowskinNiacinamide,
+    previewAlt: 'Automated WhatsApp customer inquiry and product support showcase'
   }
 ];
 
@@ -197,7 +206,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   return (
     <section id="services" className="py-24 relative border-b border-white/10">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        {/* Section Heading */}
         <div className="max-w-2xl mb-14">
           <p className="text-xs font-medium tracking-wider text-violet-300 mb-3">
             Capabilities & Digital Architecture
@@ -213,7 +221,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           </p>
         </div>
 
-        {/* 4 Interactive 3D Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {SERVICES_DATA.map((service) => {
             const isHovered = hoveredCard === service.id;
@@ -225,8 +232,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 className="group relative rounded-2xl bg-[#0D1025]/85 backdrop-blur-xl border border-white/10 hover:border-violet-400/50 p-7 sm:p-8 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 shadow-xl shadow-black/40"
               >
                 <div>
-                  {/* Top Row: Editorial Number + 3D Sculptural Icon */}
-                  <div className="flex items-start justify-between gap-4 mb-6">
+                  <div className="flex items-start justify-between gap-4 mb-5">
                     <div>
                       <span className="text-xs font-mono-tabular text-violet-300 block mb-1.5">
                         {service.index} Core Service
@@ -238,7 +244,31 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     <Sculptural3DIcon type={service.iconType} active={isHovered} />
                   </div>
 
-                  {/* Tagline & Description */}
+                  {/* Service Visual Thumbnail Preview */}
+                  <div
+                    onClick={() => onSelectDemo(service.demoId)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && onSelectDemo(service.demoId)}
+                    className="h-44 w-full rounded-xl overflow-hidden mb-5 relative border border-white/10 bg-[#080A18] cursor-pointer"
+                  >
+                    <ResilientImage
+                      src={service.previewImage}
+                      alt={service.previewAlt}
+                      fallbackCategory="agency"
+                      fallbackTitle={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080A18]/90 via-black/25 to-transparent flex items-end justify-between p-3.5">
+                      <span className="text-xs font-medium text-slate-200">
+                        Interactive Sample Preview Available
+                      </span>
+                      <span className="text-xs font-mono-tabular text-violet-300 font-semibold">
+                        Click to Launch →
+                      </span>
+                    </div>
+                  </div>
+
                   <p className="text-sm font-medium text-violet-200/95 mb-3 leading-relaxed">
                     {service.tagline}
                   </p>
@@ -246,7 +276,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     {service.description}
                   </p>
 
-                  {/* Deliverables List */}
                   <div className="border-t border-white/10 pt-5 mb-6">
                     <p className="text-xs font-semibold text-slate-200 mb-3">
                       Included Deliverables:
@@ -265,12 +294,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 </div>
 
                 <div>
-                  {/* Unboxed Metadata: Target Industries */}
                   <p className="text-xs text-slate-400 mb-5 pb-4 border-b border-white/10">
                     {service.industries}
                   </p>
 
-                  {/* Interactive Card Actions: View Demo & Get Started */}
                   <div className="flex flex-wrap items-center gap-3">
                     <button
                       type="button"

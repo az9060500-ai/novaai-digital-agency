@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
 import { Sparkles, Utensils, Coffee, ShoppingBag } from 'lucide-react';
 
+// Static ES module imports ensure Vite bundles every image into dist/assets/ during `bun run build` / `vite build`
+import finedineWagyuImg from '../assets/images/finedine_hero_dish_1791709664000.jpg';
+import finedineScallopsImg from '../assets/images/finedine_seafood_platter_1791709676255.jpg';
+import finedineBlackCodImg from '../assets/images/finedine_black_cod_lamb_1791715651807.jpg';
+import finedineChocolateImg from '../assets/images/finedine_chocolate_sphere_1791715671152.jpg';
+import urbanCafeLatteImg from '../assets/images/urbancafe_interior_latte_1791709686840.jpg';
+import glowskinSerumImg from '../assets/images/glowskin_serum_bottle_1791709698033.jpg';
+import glowskinCreamImg from '../assets/images/glowskin_cream_jar_1791709708834.jpg';
+import glowskinNiacinamideImg from '../assets/images/glowskin_niacinamide_drops_1791715619045.jpg';
+import glowskinCleanserImg from '../assets/images/glowskin_cleanser_pump_1791715635962.jpg';
+
 export const GENERATED_IMAGES = {
-  finedineWagyu: '/src/assets/images/finedine_hero_dish_1791709664000.jpg',
-  finedineScallops: '/src/assets/images/finedine_seafood_platter_1791709676255.jpg',
-  urbanCafeLatte: '/src/assets/images/urbancafe_interior_latte_1791709686840.jpg',
-  glowskinSerum: '/src/assets/images/glowskin_serum_bottle_1791709698033.jpg',
-  glowskinCream: '/src/assets/images/glowskin_cream_jar_1791709708834.jpg'
+  finedineWagyu: finedineWagyuImg,
+  finedineScallops: finedineScallopsImg,
+  finedineBlackCod: finedineBlackCodImg,
+  finedineChocolate: finedineChocolateImg,
+  urbanCafeLatte: urbanCafeLatteImg,
+  glowskinSerum: glowskinSerumImg,
+  glowskinCream: glowskinCreamImg,
+  glowskinNiacinamide: glowskinNiacinamideImg,
+  glowskinCleanser: glowskinCleanserImg
 } as const;
 
 interface ResilientImageProps {
