@@ -58,8 +58,8 @@ const DATA_DIR = path.resolve(process.cwd(), 'data');
 const STORE_PATH = path.join(DATA_DIR, 'agency_store.json');
 
 const DEFAULT_CONFIG: AgencyConfig = {
-  whatsappNumber: '15550192834',
-  contactEmail: 'hello@novaai-agency.example.com',
+  whatsappNumber: '923088913584',
+  contactEmail: 'novaaimarketingagency@gmail.com',
   agencyLocation: 'International Digital Studio · Remote & Global Delivery',
   consultationHeading: 'Book a Free 30-Minute Digital Strategy & Scope Consultation',
   pricingCards: [

@@ -10,8 +10,8 @@ import { ContactSection } from './components/ContactSection';
 import { FooterSection } from './components/FooterSection';
 
 const INITIAL_CONFIG: AgencyConfig = {
-  whatsappNumber: '15550192834',
-  contactEmail: 'hello@novaai-agency.example.com',
+  whatsappNumber: '923088913584',
+  contactEmail: 'novaaimarketingagency@gmail.com',
   agencyLocation: 'International Digital Studio · Remote & Global Delivery',
   consultationHeading: 'Book a Free 30-Minute Digital Strategy & Scope Consultation',
   pricingCards: [
@@ -278,7 +278,7 @@ export default function App() {
               `I explored the ${demoName} interactive sample demo and would like a custom quote for a similar build tailored to my business.`
             )
           }
-          agencyWhatsapp={config.whatsappNumber.replace(/[^\d]/g, '') || '15550192834'}
+          agencyWhatsapp={config.whatsappNumber.replace(/[^\d]/g, '') || '923088913584'}
         />
 
         <ProcessAndWhyUs
